@@ -1,0 +1,5 @@
+CountCalories how many calories are in {food}
+CountCalories what is the calorie count in {food}
+CountCalories calories in {food} 
+CountCalories how many calories does {food} have
+CountCalories {food}
