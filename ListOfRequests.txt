@@ -1,5 +1,20 @@
+CountCalories how many calories are in a {food}
+CountCalories how many calories are in an {food}
 CountCalories how many calories are in {food}
 CountCalories what is the calorie count in {food}
 CountCalories calories in {food} 
 CountCalories how many calories does {food} have
 CountCalories {food}
+
+AddCalories i ate an {consumedFood}
+AddCalories i ate a {consumedFood}
+AddCalories i ate {consumedFood}
+AddCalories i had an {consumedFood}
+AddCalories i had a {consumedFood}
+AddCalories i had {consumedFood}
+AddCalories i ate an {consumedFood} today
+AddCalories i ate a {consumedFood} today
+AddCalories i ate {consumedFood} today
+AddCalories i had an {consumedFood} today
+AddCalories i had a {consumedFood} today
+AddCalories i had {consumedFood} today
