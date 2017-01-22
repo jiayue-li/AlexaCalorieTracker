@@ -125,6 +125,39 @@ exports.handler = (event, context) => {
                         )
                         break;
 
+                    case "RecommendedMeals":
+                          var mainArray = ["Baked Salmon","Veggie Burger"], 
+                          sideArray = ["Roasted Brussel Sprouts","Fruit Salad"], 
+                          dessertArray = ["Peanut Brittle","Frozen yogurt"];
+                          if(suggestedCalories - totalCalories < 1400)
+                          {
+                              mainArray.push("Hamburger");
+                              mainArray.push("Grilled Chicken");
+                              sideArray.push("Chicken Noodle Soup")
+                              sideArray.push("Caesar Salad");
+                              dessertArray.push("Vanilla Ice Cream");
+                              dessertArray.push("Brownies");
+                          }
+                          if(suggestedCalories - totalCalories < 2100)
+                          {
+                              mainArray.push("Steak");
+                              mainArray.push("Pot Roast");
+                              sideArray.push("Mashed Potato");
+                              sideArray.push("Clam Chowder");
+                              dessertArray.push("Chocolate strawberries");
+                              dessertArray.push("Apple pie");
+                          }
+                          var main = mainArray[Math.random()*mainArray.length];
+                          var side = sideArray[Math.random()*sideArray.length];
+                          var dessert = dessertArray[Math.random()*dessertArray.length];
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse('maybe a ${main} with a ${side} and ${dessert} to go with that', false),
+                                {}
+                            )
+                        )
+                        break;
+
                     case "GetVideoViewCountSinceDate":
                         console.log(event.request.intent.slots.SinceDate.value)
                         var endpoint = "" // ENDPOINT GOES HERE

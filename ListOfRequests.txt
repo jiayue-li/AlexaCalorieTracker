@@ -48,3 +48,8 @@ FoodHistory what did i eat today
 FoodHistory what did i eat
 FoodHistory what have i ate
 FoodHistory what have i eaten
+
+RecommendedMeals what should i eat for dinner
+RecommendedMeals what should i eat for lunch
+RecommendedMeals what should i eat for breakfast
+RecommendedMeals what should i eat

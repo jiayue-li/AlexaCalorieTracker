@@ -37,5 +37,7 @@
         }]
     }, {
         "intent": "FoodHistory"
+    },  {
+        "intent": "RecommendedMeals"
     }
 ]}
