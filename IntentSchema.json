@@ -15,16 +15,16 @@
         "intent": "PersonalInfo",
         "slots": [{
             "name": "heightFeet",
-            "type": "number"
+            "type": "AMAZON.NUMBER"
         }, {
             "name": "heightInches",
-            "type": "number"
+            "type": "AMAZON.NUMBER"
         }, {
             "name": "age",
-            "type": "number"
+            "type": "AMAZON.NUMBER"
         }, {
             "name": "weight",
-            "type": "number"
+            "type": "AMAZON.NUMBER"
         }, {
             "name": "gender",
             "type": "boolean"

@@ -19,11 +19,12 @@ AddCalories i had an {consumedFood} today
 AddCalories i had a {consumedFood} today
 AddCalories i had {consumedFood} today
 
-PersonalInfo set my weight as {weight}, height as {heightFeet} feet and {heightInches} inches, age as {age}, and sex as {gender}
-PersonalInfo set my height as {heightFeet} feet and {heightInches} inches, weight as {weight}, age as {age}, and sex as {gender}
-PersonalInfo set my age as {age}, height as {heightFeet} feet and {heightInches} inches, weight as {weight}, and sex as {gender}
-PersonalInfo set my sex as {gender}, height as {heightFeet} feet and {heightInches} inches, weight as {weight}, and age as {age}
+PersonalInfo set my weight as {weight} height as {heightFeet} feet and {heightInches} inches age as {age} and sex as {gender}
+PersonalInfo set my height as {heightFeet} feet and {heightInches} inches weight as {weight} age as {age} and sex as {gender}
+PersonalInfo set my age as {age} height as {heightFeet} feet and {heightInches} inches weight as {weight} and sex as {gender}
+PersonalInfo set my sex as {gender} height as {heightFeet} feet and {heightInches} inches weight as {weight} and age as {age}
 PersonalInfo set my age as {age}
 PersonalInfo set my sex as {gender}
 PersonalInfo set my height as {heightFeet} feet and {heightInches} inches
 PersonalInfo set my weight as {weight}
+PersonalInfo what is my suggested calorie count
