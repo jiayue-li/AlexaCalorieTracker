@@ -11,8 +11,8 @@ var cList = {
 var totalCalories = 0;
 
 
-var feet = 0;
-var inches = 66; //inches
+var feet = 5;
+var inches = 6; //inches
 var weight = 180; //pounds
 var gender = "true"; //female, false for male
 var age = 20; //years
@@ -94,6 +94,29 @@ exports.handler = (event, context) =>
               break;
 
           case "PersonalInfo":
+            var heightInFeet = event.request.intent.slots.heightFeet;
+            if (heightInFeet && heightInFeet.value) {
+              feet = heightInFeet.value;
+            }
+            var heightInInches = event.request.intent.slots.heightInches;
+            if (heightInInches && heightInInches.value) {
+              inches = heightInInches.value;
+            }
+            var a = event.request.intent.slots.age;
+            if (a && a.value) {
+              age = a.value;
+            }
+            var w = event.request.intent.slots.weight;
+            if (w && w.value) {
+              weight = w.value;
+            }
+            var g = event.request.intent.slots.gender;
+            if (g && g.value) {
+              gender = g.value.toLowerCase();
+            }
+
+            suggestedCalories = calculateRecommendedCalories(feet, inches, weight, gender, age);
+
             context.succeed(
                 generateResponse(
                   buildSpeechletResponse(`You should eat ${suggestedCalories} calories each day. Your calorie count for the day is ${totalCalories}`, false),
@@ -150,7 +173,7 @@ function calculateRecommendedCalories(feet, inches, weight, gender, age) {
   else {
     suggestedCalories = 10*poundsToKilos(weight) + 6.25*inchesToCentimeters(feet, inches) - 5*age + 5
   }
-  return Math.round(suggestedCalories);
+  // return Math.round(suggestedCalories);
 }
 
 // Helpers
