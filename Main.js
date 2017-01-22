@@ -179,34 +179,57 @@ exports.handler = (event, context) => {
                         break;
 
                     case "PersonalInfo":
+                        var change = false;
                         var heightInFeet = event.request.intent.slots.heightFeet;
                         if (heightInFeet && heightInFeet.value) {
                             feet = parseInt(heightInFeet.value);
+                            change = true;
                         }
                         var heightInInches = event.request.intent.slots.heightInches;
                         if (heightInInches && heightInInches.value) {
                             inches = parseInt(heightInInches.value);
+                            change = true;
                         }
                         var a = event.request.intent.slots.age;
                         if (a && a.value) {
                             age = parseInt(a.value);
+                            change = true;
                         }
                         var w = event.request.intent.slots.weight;
                         if (w && w.value) {
                             weight = parseInt(w.value);
+                            change = true;
                         }
                         var g = event.request.intent.slots.gender;
                         if (g && g.value) {
                             gender = g.value.toLowerCase();
+                            if (gender == "female") {
+                                gender = true;
+                            } else {
+                                gender = false;
+                            }
+                            change = true;
                         }
 
-                        suggestedCalories = calculateRecommendedCalories(feet, inches, weight, gender, age);
-
-                        context.succeed(
-                            generateResponse(
-                                buildSpeechletResponse(`You should eat ${suggestedCalories} calories each day. Your calorie count for the day is ${totalCalories}`, false), {}
+                        var sex = "male";
+                        if (gender) {
+                            sex = "female";
+                        }
+                        if (change) {
+                            context.succeed(
+                                generateResponse(
+                                    buildSpeechletResponse(`Got it! You are now ${feet} feet ${inches} inches, ${weight} pounds, ${sex}, and ${age} years old.`, false), {}
+                                )
                             )
-                        )
+                        } else {
+                            suggestedCalories = calculateRecommendedCalories(feet, inches, weight, gender, age);
+
+                            context.succeed(
+                                generateResponse(
+                                    buildSpeechletResponse(`You should eat ${suggestedCalories} calories each day. Your calorie count for the day is ${totalCalories}`, false), {}
+                                )
+                            )
+                        }
                         break;
 
                     case "FoodHistory":
@@ -252,6 +275,18 @@ exports.handler = (event, context) => {
                         context.succeed(
                             generateResponse(
                                 buildSpeechletResponse(`I would recommend a ${main} with ${side} and ${dessert} to go with that. Anything else?`, false), {}
+                            )
+                        )
+                        break;
+
+                    case "PersonalHistory":
+                        var sex = "male";
+                        if (gender) {
+                            sex = "female";
+                        }
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse(`You are ${feet} feet ${inches} inches, ${weight} pounds, ${sex}, and ${age} years old. If you would like, you can change these entries by saying set my, followed by the age, weight, height, or gender`, false), {}
                             )
                         )
                         break;

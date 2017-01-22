@@ -39,5 +39,7 @@
         "intent": "FoodHistory"
     },  {
         "intent": "RecommendedMeals"
+    }, {
+        "intent": "PersonalHistory"
     }
 ]}

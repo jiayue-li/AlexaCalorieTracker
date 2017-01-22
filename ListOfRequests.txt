@@ -52,8 +52,16 @@ FoodHistory what did i eat today
 FoodHistory what did i eat
 FoodHistory what have i ate
 FoodHistory what have i eaten
+FoodHistory what is my daily caloric intake
+FoodHistory how many calories have i had
+FoodHistory how many calories had i eaten today
 
 RecommendedMeals what should i eat for dinner
 RecommendedMeals what should i eat for lunch
 RecommendedMeals what should i eat for breakfast
 RecommendedMeals what should i eat
+
+PersonalHistory what is my weight
+PersonalHistory what is my height
+PersonalHistory what is my age
+PersonalHistory what is my gender
