@@ -156,7 +156,7 @@ exports.handler = (event, context) => {
                         } else {
                             context.succeed(
                                 generateResponse(
-                                    buildSpeechletResponse(`Sorry, I'm not sure how many calories are in ${foodName}. I will add it to your history of meals, but I will not increment your total calorie count. Try another name for that food?`, false), {}
+                                    buildSpeechletResponse('Sorry, I m not sure how many calories are in ${foodName}. I will add it to your history of meals, but I will not increment your total calorie count. Try another name for that food?', false), {}
                                 )
                             )
                         }
@@ -187,7 +187,7 @@ exports.handler = (event, context) => {
                         } else {
                             context.succeed(
                                 generateResponse(
-                                    buildSpeechletResponse(`Sorry, I'm not sure how many calories are in ${foodName}. Try another name for that food?`, false), {}
+                                    buildSpeechletResponse('Sorry, I am not sure how many calories are in ${foodName}. Try another name for that food?', false), {}
                                 )
                             )
                         }
@@ -303,23 +303,23 @@ exports.handler = (event, context) => {
                         }
 
                         var suggestion = diseaseLookup(sickName);
-
+                        var restOfSentence;
                         if (suggestion != "nothing") {
-                            suggestion = `For the ${suggestion}, I would recommend ${suggestion}. I hope you feel better`;
+                            restOfSentence = `For the ${sickName}, I would recommend ${suggestion}. I hope you feel better`;
                         } else {
-                            suggestion = `I suggest booking a doctor's appointment soon, and in the mean time, take it slow. I hope you feel better.`;
+                            restOfSentence = 'I suggest booking a doctors appointment soon, and in the mean time, take it slow. I hope you feel better.';
                         }
 
                         context.succeed(
                             generateResponse(
-                                buildSpeechletResponse(`Based on your zip code, the nearest hospital to you is UC Davis Student Health and Counseling Services. You can get checked out there. ${suggestion}`, false), {}
+                                buildSpeechletResponse(`Based on your zip code, the nearest hospital to you is UC Davis Student Health and Counseling Services. You can get checked out there. ${restOfSentence}`, false), {}
                             )
                         )
                         break;
 
                     case "PersonalHistory":
                         var sex = "male";
-                        if (gender) {
+                        if (gender == "true") {
                             sex = "female";
                         }
                         context.succeed(
