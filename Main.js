@@ -8,6 +8,8 @@ var cList = {
 	"peach" : 59
 };
 
+var totalCalories = 0;
+
 exports.handler = (event, context) =>
 {
 
@@ -29,13 +31,23 @@ exports.handler = (event, context) =>
         )
         break;
 
+      case "LaunchRequest":
+        // Launch Request
+        console.log(`LAUNCH REQUEST`)
+        context.succeed(
+          generateResponse(
+            buildSpeechletResponse("Welcome to an Alexa Skill, this is running on a deployed lambda function", true),
+            {}
+          )
+        )
+        break;
+
       case "IntentRequest":
         // Intent Request
-        console.log('INTENT REQUEST')
+        console.log(`INTENT REQUEST`)
 
         switch(event.request.intent.name) {
-          case "CountCalories":
-            var c = 300;
+          case "AddCalories":
             var foodSlot = event.request.intent.slots.Food;
             var foodName;
 
@@ -43,20 +55,47 @@ exports.handler = (event, context) =>
               foodName = foodSlot.value.toLowerCase();
             }
 
-            // var cList = caloriesList.fruitCal;
+            numcalories = foodToCalories(foodName);
+            addCalories(numcalories);
 
-            var numcalories = cList[foodName];
 
             context.succeed(
-                  generateResponse(
-                    buildSpeechletResponse(`You consumed ${numcalories} from ${foodName}`, true),
-                    {}
-                  )
+                generateResponse(
+                  buildSpeechletResponse(`You consumed ${numcalories} from ${foodName} Your calorie count for the day is now ${totalCalories}`, true),
+                  {}
                 )
+              )
+              break;
+
+          case "CountCalories":
+            var foodSlot = event.request.intent.slots.Food;
+            var foodName;
+
+            if (foodSlot && foodSlot.value) {
+              foodName = foodSlot.value.toLowerCase();
+            }
+
+            numcalories = foodToCalories(foodName);
+
+            context.succeed(
+                generateResponse(
+                  buildSpeechletResponse(`There are ${numcalories} calories in ${foodName}. Your calorie count for the day is ${totalCalories}`, true),
+                  {}
+                )
+              )
+
+              break;
+
+          case "GetVideoViewCountSinceDate":
+            console.log(event.request.intent.slots.SinceDate.value)
+            var endpoint = "" // ENDPOINT GOES HERE
+            var body = ""
+            break;
+
+          default:
+            throw "Invalid intent"
         }
-
-
-        break;
+          break;
 
       case "SessionEndRequest":
         // Session Ended Request
@@ -70,6 +109,16 @@ exports.handler = (event, context) =>
   } catch(error) {context.fail('Exception: ${error}')}
 
 }
+
+function foodToCalories(foodName) {
+  var numcalories = cList[foodName];
+  return numcalories;
+}
+
+function addCalories(calories) {
+  totalCalories = totalCalories + calories;
+}
+
 
 // Helpers
 buildSpeechletResponse = (outputText, shouldEndSession) => {
