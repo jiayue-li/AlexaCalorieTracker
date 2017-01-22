@@ -117,7 +117,7 @@ exports.handler = (event, context) => {
                 console.log("LAUNCH REQUEST")
                 context.succeed(
                     generateResponse(
-                        buildSpeechletResponse("Welcome to Calorie Counter, your personal health assistant. Ask me how many calories an apple has, or, what your daily caloric intake is so far. How may I help you?", false)
+                        buildSpeechletResponse("Welcome to nutrition tracker. Im Cal, and I'll be your personal health assistant. Ask me how many calories an apple has, or, what your daily caloric intake is so far. How may I help you?", false)
                     )
                 )
                 break;
@@ -150,7 +150,7 @@ exports.handler = (event, context) => {
                             totalCalories = totalCalories + numcalories;
                             context.succeed(
                                 generateResponse(
-                                    buildSpeechletResponse(`You consumed ${numcalories} calories. Your calorie count for the day is now ${totalCalories}`, false), {}
+                                    buildSpeechletResponse(`You consumed ${numcalories} calories. Your caloric intake for the day is now ${totalCalories}`, false), {}
                                 )
                             )
                         } else {
@@ -181,7 +181,7 @@ exports.handler = (event, context) => {
                         if (numcalories > 0) {
                             context.succeed(
                                 generateResponse(
-                                    buildSpeechletResponse(`There are ${numcalories} calories in ${foodName}. Your calorie count for the day is ${totalCalories}`, false), {}
+                                    buildSpeechletResponse(`There are ${numcalories} calories in ${foodName}. Your caloric intake for the day is ${totalCalories}`, false), {}
                                 )
                             )
                         } else {
@@ -332,7 +332,7 @@ exports.handler = (event, context) => {
                     case "HelpMe":
                         context.succeed(
                             generateResponse(
-                                buildSpeechletResponse(`Hello! This is Calorie Counter, your personal health assistant. You can ask me anything health related! Try asking me how many calories are in different foods, or how many calories you have had today. You can also change your height, weight, age, or gender for customized food recommendations. Go ahead, ask me how many calories are in a doughnut.`, false), {}
+                                buildSpeechletResponse(`Hello! Welcome to nutrition tracker. Im Cal, your personal health assistant. You can ask me anything health related! Try asking me how many calories are in different foods, or how many calories you have had today. You can also change your height, weight, age, or gender for customized food recommendations. Go ahead, ask me how many calories are in a doughnut.`, false), {}
                             )
                         )
                         break;
@@ -349,7 +349,7 @@ exports.handler = (event, context) => {
                     case "TerminateCal":
                         context.succeed(
                             generateResponse(
-                                buildSpeechletResponse(`Thanks for using Calorie Counter. See you around!`, true), {}
+                                buildSpeechletResponse(`Thanks for using nutrition tracker. See you around!`, true), {}
                             )
                         )
                         console.log('SESSION ENDED REQUEST')
@@ -361,7 +361,7 @@ exports.handler = (event, context) => {
                 // Session Ended Request
                 context.succeed(
                     generateResponse(
-                        buildSpeechletResponse(`Thanks for using Calorie Counter. See you around!`, true), {}
+                        buildSpeechletResponse(`Thanks for using nutrition tracker. See you around!`, true), {}
                     )
                 )
                 console.log('SESSION ENDED REQUEST')
