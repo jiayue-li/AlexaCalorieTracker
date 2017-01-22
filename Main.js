@@ -26,9 +26,16 @@ exports.handler = (event, context) =>
         switch(event.request.intent.name) {
           case "CountCalories":
             var calories = 300;
+            var foodSlot = event.request.intent.slots.Food;
+            var foodName;
+
+            if (foodSlot && foodSlot.value) {
+              foodName = foodSlot.value.toLowerCase();
+            }
+
             context.succeed(
                   generateResponse(
-                    buildSpeechletResponse(`You consumed ${calories}`, true),
+                    buildSpeechletResponse(`You consumed ${calories} from ${foodName}`, true),
                     {}
                   )
                 )
