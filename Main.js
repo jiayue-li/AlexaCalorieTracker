@@ -84,13 +84,13 @@ var cList = {
 };
 
 var diseaseList = {
-    "flu": "rest",
-    "cold": "rest",
-    "fever": "rest",
-    "diarrhea": "rest",
-    "coughs": "rest",
-    "chills": "rest",
-    "mumps": "rest"
+    "flu": "resting and letting the body fight infection on its own. Over the coutner pain relievers may help with symptoms. An annual vaccine can help prevent the flu.",
+    "cold": "sleep and rest. Most people recover very soon, but over the counter medicine can hep relieve symptoms.",
+    "fever": "resting and drinking a lot of fluids. Medication is not necessary, but if you are uncomfortable, pain relievers like Tylenol or ibuprofen may help.",
+    "diarrhea": "some over the counter medication to stop occasional bouts of diarrhea. ",
+    "coughs": "drinking fluids to soothe a dry, irritated throat. Cough drops, hot drinks, and herbal remedies may also help.",
+    "chills": "taking a warm bath or cool shower to reduce fever. Over the counter medication ",
+    "mumps": "focusing on relieveing symptoms. Recovery takes around two weeks so make sure to rest and consult your doctor. Anti inflammatory medicine and analgesic may help."
 };
 
 //var firebase = require("firebase");
