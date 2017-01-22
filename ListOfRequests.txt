@@ -6,6 +6,12 @@ CountCalories calories in {Food}
 CountCalories how many calories does {Food} have
 CountCalories {Food}
 
+CountCalories how many calories are in {numFoods} {Food}
+CountCalories what is the calorie count in {numFoods} {Food}
+CountCalories calories in {numFoods} {Food}
+CountCalories how many calories does {numFoods} {Food} have
+CountCalories {numFoods} {Food}
+
 AddCalories i ate an {consumedFood}
 AddCalories i ate a {consumedFood}
 AddCalories i ate {consumedFood}
@@ -19,12 +25,17 @@ AddCalories i had an {consumedFood} today
 AddCalories i had a {consumedFood} today
 AddCalories i had {consumedFood} today
 
-PersonalInfo set my weight as {weight} height as {heightFeet} feet and {heightInches} inches age as {age} and sex as {gender}
-PersonalInfo set my height as {heightFeet} feet and {heightInches} inches weight as {weight} age as {age} and sex as {gender}
-PersonalInfo set my age as {age} height as {heightFeet} feet and {heightInches} inches weight as {weight} and sex as {gender}
-PersonalInfo set my sex as {gender} height as {heightFeet} feet and {heightInches} inches weight as {weight} and age as {age}
+AddCalories i ate {nFoods} {consumedFood}
+AddCalories i had {nFoods} {consumedFood}
+AddCalories i ate {nFoods}  {consumedFood} today
+AddCalories i had {nFoods} {consumedFood} today
+
 PersonalInfo set my age as {age}
 PersonalInfo set my sex as {gender}
 PersonalInfo set my height as {heightFeet} feet and {heightInches} inches
 PersonalInfo set my weight as {weight}
+PersonalInfo set my weight as {weight} height as {heightFeet} feet and {heightInches} inches age as {age} and sex as {gender}
+PersonalInfo set my height as {heightFeet} feet and {heightInches} inches weight as {weight} age as {age} and sex as {gender}
+PersonalInfo set my age as {age} height as {heightFeet} feet and {heightInches} inches weight as {weight} and sex as {gender}
+PersonalInfo set my sex as {gender} height as {heightFeet} feet and {heightInches} inches weight as {weight} and age as {age}
 PersonalInfo what is my suggested calorie count

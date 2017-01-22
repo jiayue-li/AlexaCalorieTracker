@@ -51,7 +51,7 @@ exports.handler = (event, context) => {
 
                         numcalories = foodToCalories(foodName);
                         totalCalories = totalCalories + numcalories;
-                        history.push("foodName")
+                        history.push(foodName)
 
                         context.succeed(
                             generateResponse(
