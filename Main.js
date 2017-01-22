@@ -1,4 +1,12 @@
-var caloriesList = require('./calories');
+// var caloriesList = require('./calories');
+var cList = {
+  "apple" : 95,
+	"orange" : 45,
+	"banana" : 105,
+	"mango" : 201,
+	"watermelon" : 85,
+	"peach" : 59
+};
 
 exports.handler = (event, context) =>
 {
@@ -35,7 +43,9 @@ exports.handler = (event, context) =>
               foodName = foodSlot.value.toLowerCase();
             }
 
-            var numcalories = caloriesList[foodName]
+            // var cList = caloriesList.fruitCal;
+
+            var numcalories = cList[foodName];
 
             context.succeed(
                   generateResponse(
