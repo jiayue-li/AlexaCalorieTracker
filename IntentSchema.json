@@ -36,7 +36,6 @@
             "type": "boolean"
         }]
     }, {
-        "intent": "FoodHistory",
-    }]
-}]
-}
+        "intent": "FoodHistory"
+    }
+]}

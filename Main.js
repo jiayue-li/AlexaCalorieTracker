@@ -42,6 +42,7 @@ exports.handler = (event, context) => {
 
                 switch (event.request.intent.name) {
                     case "AddCalories":
+                        var nFood = 1;
                         var foodSlot = event.request.intent.slots.consumedFood;
                         var foodName;
 
@@ -49,9 +50,17 @@ exports.handler = (event, context) => {
                             foodName = foodSlot.value.toLowerCase();
                         }
 
-                        numcalories = foodToCalories(foodName);
+                        var nFoodSlot = event.request.intent.slots.nFoods;
+
+                        if (nFoodSlot && nFoodSlot.value) {
+                            nFood = parseInt(nFoodSlot.value);
+                        }
+
+                        numcalories = foodToCalories(foodName, nFood);
+                        nFood = 1;
+
                         totalCalories = totalCalories + numcalories;
-                        history.push(foodName)
+                        history.push(foodName);
 
                         context.succeed(
                             generateResponse(
@@ -61,14 +70,21 @@ exports.handler = (event, context) => {
                         break;
 
                     case "CountCalories":
+                        var numFood = 1;
                         var foodSlot = event.request.intent.slots.Food;
                         var foodName;
-
                         if (foodSlot && foodSlot.value) {
                             foodName = foodSlot.value.toLowerCase();
                         }
 
-                        numcalories = foodToCalories(foodName);
+                        var numFoodSlot = event.request.intent.slots.numFoods;
+
+                        if (numFoodSlot && numFoodSlot.value) {
+                            numFood = parseInt(numFoodSlot.value);
+                        }
+                        numcalories = foodToCalories(foodName, numFood);
+
+                        numFood = 1;
 
                         context.succeed(
                             generateResponse(
@@ -81,19 +97,19 @@ exports.handler = (event, context) => {
                     case "PersonalInfo":
                         var heightInFeet = event.request.intent.slots.heightFeet;
                         if (heightInFeet && heightInFeet.value) {
-                            feet = heightInFeet.value;
+                            feet = parseInt(heightInFeet.value);
                         }
                         var heightInInches = event.request.intent.slots.heightInches;
                         if (heightInInches && heightInInches.value) {
-                            inches = heightInInches.value;
+                            inches = parseInt(heightInInches.value);
                         }
                         var a = event.request.intent.slots.age;
                         if (a && a.value) {
-                            age = a.value;
+                            age = parseInt(a.value);
                         }
                         var w = event.request.intent.slots.weight;
                         if (w && w.value) {
-                            weight = w.value;
+                            weight = parseInt(w.value);
                         }
                         var g = event.request.intent.slots.gender;
                         if (g && g.value) {
@@ -140,8 +156,8 @@ exports.handler = (event, context) => {
 
 }
 
-function foodToCalories(foodName) {
-    var numcalories = cList[foodName];
+function foodToCalories(foodName, numFood) {
+    var numcalories = cList[foodName]*numFood;
     return numcalories;
 }
 
@@ -153,7 +169,7 @@ function poundsToKilos(weight) {
 }
 
 function inchesToCentimeters(feet, inches) {
-    return 2.54 * (feet * 12 + inches);
+    return 2.54 * (parseInt(feet* 12) + parseInt(inches));
 }
 
 function calculateRecommendedCalories(feet, inches, weight, gender, age) {
@@ -163,7 +179,7 @@ function calculateRecommendedCalories(feet, inches, weight, gender, age) {
     } else {
         suggestedCalories = 10 * poundsToKilos(weight) + 6.25 * inchesToCentimeters(feet, inches) - 5 * age + 5
     }
-    // return Math.round(suggestedCalories);
+    return Math.round(suggestedCalories);
 }
 
 // Helpers
