@@ -14,7 +14,10 @@
     }, {
         "intent": "PersonalInfo",
         "slots": [{
-            "name": "height",
+            "name": "heightFeet",
+            "type": "number"
+        }, {
+            "name": "heightInches",
             "type": "number"
         }, {
             "name": "age",
