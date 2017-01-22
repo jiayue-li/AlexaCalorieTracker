@@ -25,7 +25,7 @@ exports.handler = (event, context) =>
         console.log("LAUNCH REQUEST")
         context.succeed (
           generateResponse(
-            buildSpeechletResponse("Welcome to Calorie Counter", true)
+            buildSpeechletResponse("Welcome to Calorie Counter", false)
           )
         )
         break;
@@ -35,7 +35,7 @@ exports.handler = (event, context) =>
         console.log(`LAUNCH REQUEST`)
         context.succeed(
           generateResponse(
-            buildSpeechletResponse("Welcome to an Alexa Skill, this is running on a deployed lambda function", true),
+            buildSpeechletResponse("Welcome to an Alexa Skill, this is running on a deployed lambda function", false),
             {}
           )
         )
@@ -59,7 +59,7 @@ exports.handler = (event, context) =>
 
             context.succeed(
                 generateResponse(
-                  buildSpeechletResponse(`You consumed ${numcalories} from ${foodName}. Your calorie count for the day is now ${totalCalories}`, true),
+                  buildSpeechletResponse(`You consumed ${numcalories} from ${foodName}. Your calorie count for the day is now ${totalCalories}`, false),
                   {}
                 )
               )
@@ -77,7 +77,7 @@ exports.handler = (event, context) =>
 
             context.succeed(
                 generateResponse(
-                  buildSpeechletResponse(`There are ${numcalories} calories in ${foodName}. Your calorie count for the day is ${totalCalories}`, true),
+                  buildSpeechletResponse(`There are ${numcalories} calories in ${foodName}. Your calorie count for the day is ${totalCalories}`, false),
                   {}
                 )
               )
