@@ -1,3 +1,5 @@
+var caloriesList = require('./calories');
+
 exports.handler = (event, context) =>
 {
 
@@ -25,7 +27,7 @@ exports.handler = (event, context) =>
 
         switch(event.request.intent.name) {
           case "CountCalories":
-            var calories = 300;
+            var c = 300;
             var foodSlot = event.request.intent.slots.Food;
             var foodName;
 
@@ -33,9 +35,11 @@ exports.handler = (event, context) =>
               foodName = foodSlot.value.toLowerCase();
             }
 
+            var numcalories = caloriesList[foodName]
+
             context.succeed(
                   generateResponse(
-                    buildSpeechletResponse(`You consumed ${calories} from ${foodName}`, true),
+                    buildSpeechletResponse(`You consumed ${numcalories} from ${foodName}`, true),
                     {}
                   )
                 )
