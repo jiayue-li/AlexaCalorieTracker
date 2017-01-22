@@ -12,7 +12,6 @@ var totalCalories = 0;
 
 exports.handler = (event, context) =>
 {
-
   try {
     if (event.session.new) {
       //New Session
@@ -48,7 +47,7 @@ exports.handler = (event, context) =>
 
         switch(event.request.intent.name) {
           case "AddCalories":
-            var foodSlot = event.request.intent.slots.Food;
+            var foodSlot = event.request.intent.slots.consumedFood;
             var foodName;
 
             if (foodSlot && foodSlot.value) {
@@ -56,8 +55,7 @@ exports.handler = (event, context) =>
             }
 
             numcalories = foodToCalories(foodName);
-            addCalories(numcalories);
-
+            totalCalories = totalCalories + numcalories;
 
             context.succeed(
                 generateResponse(
@@ -115,9 +113,9 @@ function foodToCalories(foodName) {
   return numcalories;
 }
 
-function addCalories(calories) {
-  totalCalories = totalCalories + calories;
-}
+// function addCalories(calories) {
+//   totalCalories = totalCalories + calories;
+// }
 
 
 // Helpers
