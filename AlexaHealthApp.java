@@ -1,1 +1,0 @@
-"ALEXA LET'S GO"
