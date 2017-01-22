@@ -1,11 +1,82 @@
 // var caloriesList = require('./calories');
 var cList = {
     "apple": 95,
-    "orange": 45,
+    "apple pie": 67,
+    "apricot": 17,
+    "artichoke": 60,
+    "asparagus": 60,
+    "avocado": 234,
+    "baked salmon": 200,
     "banana": 105,
+    "beef": 213,
+    "beets": 75,
+    "blackberries": 62,
+    "bologna": 140,
+    "brisket": 178,
+    "broccoli": 85,
+    "brownies": 132,
+    "brussel sprouts": 38,
+    "cabbage": 70,
+    "caesar salad": 94,
+    "cantaloupe": 160,
+    "cauliflower": 55,
+    "carrot": 60,
+    "celery": 10,
+    "cherries": 85,
+    "chicken": 335,
+    "chicken noodle soup": 87,
+    "chocolate strawberries": 140,
+    "chocolate": 235,
+    "chorizo": 273,
+    "clam chowder": 301,
+    "corn": 75,
+    "cranberries": 60,
+    "cucumber": 40,
+    "dark chocolate": 155,
+    "eggplant": 60,
+    "frozen yogurt": 159,
+    "fruit salad": 124,
+    "grapes": 115,
+    "grapefruit": 75,
+    "grilled chicken": 335,
+    "hamburger": 354,
+    "honeydew": 400,
+    "kale": 70,
+    "kiwi": 55,
+    "leek": 40,
     "mango": 201,
+    "mashed potatoes": 214,
+    "mushrooms": 40,
+    "nectarine": 70,
+    "onion": 60,
+    "orange": 45,
+    "papaya": 150,
+    "peach": 59,
+    "peanut brittle": 138,
+    "pear": 100,
+    "peppers": 45,
+    "pepperoni": 273,
+    "pickle": 25,
+    "pineapple": 75,
+    "pizza": 285,
+    "pork": 216,
+    "pot roast": 252,
+    "ribs": 299,
+    "salami": 230,
+    "salmon": 330,
+    "sirloin": 153,
+    "spaghetti": 221,
+    "spinach": 55,
+    "steak": 679,
+    "tangerine": 43,
+    "tomato": 55,
+    "tripe": 53,
+    "turnips": 60,
+    "t-bone": 182,
     "watermelon": 85,
-    "peach": 59
+    "vanilla": 137,
+    "veggie burger": 124,
+    "zucchini": 60
 };
 
 var totalCalories = 0;
@@ -31,7 +102,7 @@ exports.handler = (event, context) => {
                 console.log("LAUNCH REQUEST")
                 context.succeed(
                     generateResponse(
-                        buildSpeechletResponse("Welcome to Calorie Counter. My name is Cal and I'll be your personal health assistant. Ask me how many calories an apple has or what your daily caloric intake is so far. How may I help you?", false)
+                        buildSpeechletResponse("Welcome to Calorie Counter, your personal health assistant. Ask me how many calories an apple has, or, what your daily caloric intake is so far. How may I help you?", false)
                     )
                 )
                 break;
@@ -58,15 +129,22 @@ exports.handler = (event, context) => {
 
                         numcalories = foodToCalories(foodName, nFood);
                         nFood = 1;
-
-                        totalCalories = totalCalories + numcalories;
                         history.push(foodName);
 
-                        context.succeed(
-                            generateResponse(
-                                buildSpeechletResponse(`You consumed ${numcalories} from ${foodName}. Your calorie count for the day is now ${totalCalories}`, false), {}
+                        if (numcalories > 0) {
+                            totalCalories = totalCalories + numcalories;
+                            context.succeed(
+                                generateResponse(
+                                    buildSpeechletResponse(`You consumed ${numcalories} calories. Your calorie count for the day is now ${totalCalories}`, false), {}
+                                )
                             )
-                        )
+                        } else {
+                            context.succeed(
+                                generateResponse(
+                                    buildSpeechletResponse(`Sorry, I'm not sure how many calories are in ${foodName}. I will add it to your history of meals, but I will not increment your total calorie count. Try another name for that food?`, false), {}
+                                )
+                            )
+                        }
                         break;
 
                     case "CountCalories":
@@ -85,13 +163,19 @@ exports.handler = (event, context) => {
                         numcalories = foodToCalories(foodName, numFood);
 
                         numFood = 1;
-
-                        context.succeed(
-                            generateResponse(
-                                buildSpeechletResponse(`There are ${numcalories} calories in ${foodName}. Your calorie count for the day is ${totalCalories}`, false), {}
+                        if (numcalories > 0) {
+                            context.succeed(
+                                generateResponse(
+                                    buildSpeechletResponse(`There are ${numcalories} calories in ${foodName}. Your calorie count for the day is ${totalCalories}`, false), {}
+                                )
                             )
-                        )
-
+                        } else {
+                            context.succeed(
+                                generateResponse(
+                                    buildSpeechletResponse(`Sorry, I'm not sure how many calories are in ${foodName}. Try another name for that food?`, false), {}
+                                )
+                            )
+                        }
                         break;
 
                     case "PersonalInfo":
@@ -126,6 +210,20 @@ exports.handler = (event, context) => {
                         break;
 
                     case "FoodHistory":
+                        var text = " ";
+                        if (history.length != 0) {
+                            for (count = 0; count < history.length; count++) {
+                                text += `${history[count]} `;
+                            }
+                        } else {
+                            text = "nothing yet!";
+                        }
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse(`You have consumed ${totalCalories} calories thus far. Your previous meals include${text}`, false), {}
+                            )
+                        )
+                        break;
 
 
                     case "RecommendedMeals":
@@ -153,7 +251,7 @@ exports.handler = (event, context) => {
                         var dessert = dessertArray[Math.floor(Math.random() * dessertArray.length)];
                         context.succeed(
                             generateResponse(
-                                buildSpeechletResponse(`I would recommend a ${main} with ${side} and ${dessert} to go with that. Anything else?`, true), {}
+                                buildSpeechletResponse(`I would recommend a ${main} with ${side} and ${dessert} to go with that. Anything else?`, false), {}
                             )
                         )
                         break;
@@ -164,8 +262,8 @@ exports.handler = (event, context) => {
                         var body = ""
                         break;
 
-                    default:
-                        throw "Invalid intent"
+                        // default:
+                        //     throw "Invalid intent"
                 }
                 break;
 
@@ -190,7 +288,10 @@ exports.handler = (event, context) => {
 }
 
 function foodToCalories(foodName, numFood) {
-    var numcalories = cList[foodName] * numFood;
+    var numCalories = 0
+    if (cList[foodName]) {
+        var numcalories = cList[foodName] * numFood;
+    }
     return numcalories;
 }
 
