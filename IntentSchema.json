@@ -4,8 +4,8 @@
       "intent": "CountCalories",
       "slots": [
         {
-          "name": "food",
-          "type": "Food"
+          "name": "Food",
+          "type": "food"
         }
       ]
     },
@@ -14,7 +14,7 @@
       "slots": [
       {
         "name": "consumedFood",
-        "type": "Food"
+        "type": "food"
         }]
     }
   ]

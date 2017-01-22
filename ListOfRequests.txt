@@ -1,10 +1,10 @@
-CountCalories how many calories are in a {food}
-CountCalories how many calories are in an {food}
-CountCalories how many calories are in {food}
-CountCalories what is the calorie count in {food}
-CountCalories calories in {food} 
-CountCalories how many calories does {food} have
-CountCalories {food}
+CountCalories how many calories are in a {Food}
+CountCalories how many calories are in an {Food}
+CountCalories how many calories are in {Food}
+CountCalories what is the calorie count in {Food}
+CountCalories calories in {Food} 
+CountCalories how many calories does {Food} have
+CountCalories {Food}
 
 AddCalories i ate an {consumedFood}
 AddCalories i ate a {consumedFood}

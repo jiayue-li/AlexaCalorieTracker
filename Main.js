@@ -61,7 +61,7 @@ exports.handler = (event, context) =>
 
             context.succeed(
                 generateResponse(
-                  buildSpeechletResponse(`You consumed ${numcalories} from ${foodName} Your calorie count for the day is now ${totalCalories}`, true),
+                  buildSpeechletResponse(`You consumed ${numcalories} from ${foodName}. Your calorie count for the day is now ${totalCalories}`, true),
                   {}
                 )
               )
