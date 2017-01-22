@@ -70,6 +70,15 @@ PersonalHistory what is my height
 PersonalHistory what is my age
 PersonalHistory what is my gender
 
+MedicalInfo i think i am sick with the {Illness}
+MedicalInfo i have a case of the {Illness}
+MedicalInfo i don't feel so well
+MedicalInfo i think i have the {Illness}
+MedicalInfo help i think i have the {Illness}
+MedicalInfo i have {Illness}
+MedicalInfo i have {Illness} what do i do
+MedicalInfo i have {Illness} help
+
 HelpMe what can i ask you
 HelpMe help me
 HelpMe what can I ask you

@@ -36,8 +36,14 @@
             "type": "boolean"
         }]
     }, {
+        "intent": "MedicalInfo",
+        "slots": [{
+            "name": "Illness",
+            "type": "illness"
+        }]
+    }, {
         "intent": "FoodHistory"
-    },  {
+    }, {
         "intent": "RecommendedMeals"
     }, {
         "intent": "PersonalHistory"
@@ -45,5 +51,5 @@
         "intent": "HelpMe"
     }, {
         "intent": "TerminateCal"
-    }
-]}
+    }]
+}

@@ -43,6 +43,7 @@ var cList = {
     "grilled chicken": 335,
     "hamburger": 354,
     "honeydew": 400,
+    "hot dog": 290,
     "kale": 70,
     "kiwi": 55,
     "leek": 40,
@@ -67,6 +68,7 @@ var cList = {
     "salami": 230,
     "salmon": 330,
     "sirloin": 153,
+    "soda": 182,
     "spaghetti": 221,
     "spinach": 55,
     "steak": 679,
@@ -81,6 +83,17 @@ var cList = {
     "zucchini": 60
 };
 
+var diseaseList = {
+    "flu": "rest",
+    "cold": "rest",
+    "fever": "rest",
+    "diarrhea": "rest",
+    "coughs": "rest",
+    "chills": "rest",
+    "mumps": "rest"
+};
+
+//var firebase = require("firebase");
 var totalCalories = 0;
 var feet = 5;
 var inches = 6; //inches
@@ -281,6 +294,29 @@ exports.handler = (event, context) => {
                         )
                         break;
 
+                    case "MedicalInfo":
+                        var sickSlot = event.request.intent.slots.Illness;
+                        var sickName;
+
+                        if (sickSlot && sickSlot.value) {
+                            sickName = sickSlot.value.toLowerCase();
+                        }
+
+                        var suggestion = diseaseLookup(sickName);
+
+                        if (suggestion != "nothing") {
+                            suggestion = `For the ${suggestion}, I would recommend ${suggestion}. I hope you feel better`;
+                        } else {
+                            suggestion = `I suggest booking a doctor's appointment soon, and in the mean time, take it slow. I hope you feel better.`;
+                        }
+
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse(`Based on your zip code, the nearest hospital to you is UC Davis Student Health and Counseling Services. You can get checked out there. ${suggestion}`, false), {}
+                            )
+                        )
+                        break;
+
                     case "PersonalHistory":
                         var sex = "male";
                         if (gender) {
@@ -347,6 +383,13 @@ function foodToCalories(foodName, numFood) {
         var numcalories = cList[foodName] * numFood;
     }
     return numcalories;
+}
+
+function diseaseLookup(illness) {
+    if(diseaseList[illness]) {
+        return diseaseList[illness];
+    }
+    return nothing;
 }
 
 // function addCalories(calories) {
