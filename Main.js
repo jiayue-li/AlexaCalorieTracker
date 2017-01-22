@@ -309,6 +309,15 @@ exports.handler = (event, context) => {
 
                         // default:
                         //     throw "Invalid intent"
+
+                    case "TerminateCal":
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse(`Thanks for using Calorie Counter. See you around!`, true), {}
+                            )
+                        )
+                        console.log('SESSION ENDED REQUEST')
+                        break;
                 }
                 break;
 

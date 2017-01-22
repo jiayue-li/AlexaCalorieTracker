@@ -43,5 +43,7 @@
         "intent": "PersonalHistory"
     }, {
         "intent": "HelpMe"
+    }, {
+        "intent": "TerminateCal"
     }
 ]}

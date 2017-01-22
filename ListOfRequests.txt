@@ -86,3 +86,12 @@ HelpMe what do you do
 HelpMe how do I use you
 HelpMe how can I use you
 HelpMe what can you tell me
+
+TerminateCal stop
+TerminateCal cancel
+TerminateCal turn off
+TerminateCal thank you
+TerminateCal i am finished
+TerminateCal close
+TerminateCal i am done
+TerminateCal done
