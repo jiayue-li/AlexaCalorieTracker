@@ -29,6 +29,10 @@ AddCalories i had {nFoods} {consumedFood}
 AddCalories i ate {nFoods} {consumedFood} today
 AddCalories i had {nFoods} {consumedFood} today
 
+PersonalInfo change my age to {age}
+PersonalInfo change my gender to {gender}
+PersonalInfo change my height to {heightFeet} feet and {heightInches} inches
+PersonalInfo change my weight to {weight}
 PersonalInfo set my age as {age}
 PersonalInfo set my sex as {gender}
 PersonalInfo set my height as {heightFeet} feet and {heightInches} inches
@@ -65,3 +69,20 @@ PersonalHistory what is my weight
 PersonalHistory what is my height
 PersonalHistory what is my age
 PersonalHistory what is my gender
+
+HelpMe what can i ask you
+HelpMe help me
+HelpMe what can I ask you
+HelpMe get help
+HelpMe to help
+HelpMe to help me
+HelpMe what commands can I ask
+HelpMe what commands can I say
+HelpMe what can I do
+HelpMe what can I use this for
+HelpMe what questions can I ask
+HelpMe what can you do
+HelpMe what do you do
+HelpMe how do I use you
+HelpMe how can I use you
+HelpMe what can you tell me

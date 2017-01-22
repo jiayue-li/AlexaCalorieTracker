@@ -41,5 +41,7 @@
         "intent": "RecommendedMeals"
     }, {
         "intent": "PersonalHistory"
+    }, {
+        "intent": "HelpMe"
     }
 ]}

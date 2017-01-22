@@ -33,6 +33,8 @@ var cList = {
     "cranberries": 60,
     "cucumber": 40,
     "dark chocolate": 155,
+    "doughnut": 195,
+    "donut": 195,
     "eggplant": 60,
     "frozen yogurt": 159,
     "fruit salad": 124,
@@ -287,6 +289,14 @@ exports.handler = (event, context) => {
                         context.succeed(
                             generateResponse(
                                 buildSpeechletResponse(`You are ${feet} feet ${inches} inches, ${weight} pounds, ${sex}, and ${age} years old. If you would like, you can change these entries by saying set my, followed by the age, weight, height, or gender`, false), {}
+                            )
+                        )
+                        break;
+
+                    case "HelpMe":
+                        context.succeed(
+                            generateResponse(
+                                buildSpeechletResponse(`Hello! This is Calorie Counter, your personal health assistant. You can ask me anything health related! Try asking me how many calories are in different foods, or how many calories you have had today. You can also change your height, weight, age, or gender for customized food recommendations. Go ahead, ask me how many calories are in a doughnut.`, false), {}
                             )
                         )
                         break;
