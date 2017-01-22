@@ -2,7 +2,7 @@ CountCalories how many calories are in a {Food}
 CountCalories how many calories are in an {Food}
 CountCalories how many calories are in {Food}
 CountCalories what is the calorie count in {Food}
-CountCalories calories in {Food} 
+CountCalories calories in {Food}
 CountCalories how many calories does {Food} have
 CountCalories {Food}
 
@@ -18,3 +18,5 @@ AddCalories i ate {consumedFood} today
 AddCalories i had an {consumedFood} today
 AddCalories i had a {consumedFood} today
 AddCalories i had {consumedFood} today
+
+PersonalInfo set my weight as {weight}, height as {height}

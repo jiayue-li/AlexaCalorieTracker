@@ -1,21 +1,30 @@
 {
-  "intents": [
-    {
-      "intent": "CountCalories",
-      "slots": [
-        {
-          "name": "Food",
-          "type": "food"
-        }
-      ]
-    },
-    {
-      "intent": "AddCalories",
-      "slots": [
-      {
-        "name": "consumedFood",
-        "type": "food"
+    "intents": [{
+        "intent": "CountCalories",
+        "slots": [{
+            "name": "Food",
+            "type": "food"
         }]
-    }
-  ]
+    }, {
+        "intent": "AddCalories",
+        "slots": [{
+            "name": "consumedFood",
+            "type": "food"
+        }]
+    }, {
+        "intent": "PersonalInfo",
+        "slots": [{
+            "name": "height",
+            "type": "number"
+        }, {
+            "name": "age",
+            "type": "number"
+        }, {
+            "name": "weight",
+            "type": "number"
+        }, {
+            "name": "gender",
+            "type": "boolean"
+        }]
+    }]
 }

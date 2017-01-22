@@ -9,6 +9,10 @@ var cList = {
 };
 
 var totalCalories = 0;
+var height = 66; //inches
+var weight = 180; //pounds
+var gender = true; //female, false for male
+var age = 20; //years
 
 exports.handler = (event, context) =>
 {
@@ -25,7 +29,7 @@ exports.handler = (event, context) =>
         console.log("LAUNCH REQUEST")
         context.succeed (
           generateResponse(
-            buildSpeechletResponse("Welcome to Calorie Counter", false)
+            buildSpeechletResponse("Welcome to Calorie Counter. My name is Cal and I'll be your personal health assistant. Ask me how many calories an apple has or what your daily caloric intake is so far. How may I help you?", false)
           )
         )
         break;
