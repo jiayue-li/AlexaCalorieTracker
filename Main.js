@@ -26,7 +26,12 @@ exports.handler = (event, context) =>
         switch(event.request.intent.name) {
           case "CountCalories":
             var calories = 300;
-            context.succeed(generateResponse(buildSpeechletResponse('You consumed ${calories}', true)))
+            context.succeed(
+                  generateResponse(
+                    buildSpeechletResponse(`You consumed ${calories}`, true),
+                    {}
+                  )
+                )
         }
 
 
@@ -45,28 +50,25 @@ exports.handler = (event, context) =>
 
 }
 
+// Helpers
 buildSpeechletResponse = (outputText, shouldEndSession) => {
+
   return {
-    outputSpeech {
+    outputSpeech: {
       type: "PlainText",
       text: outputText
     },
     shouldEndSession: shouldEndSession
   }
+
 }
 
-generateResponse = (sessionAttributes, speechletResponse) => {
+generateResponse = (speechletResponse, sessionAttributes) => {
+
   return {
     version: "1.0",
     sessionAttributes: sessionAttributes,
     response: speechletResponse
   }
-}
-
-    // > Launch Request
-    //
-
-
-
 
 }
