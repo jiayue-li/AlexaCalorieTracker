@@ -9,14 +9,12 @@ var cList = {
 };
 
 var totalCalories = 0;
-
-
 var feet = 5;
 var inches = 6; //inches
 var weight = 180; //pounds
 var gender = "true"; //female, false for male
 var age = 20; //years
-
+var history = []; //Empty list to begin with
 var suggestedCalories = calculateRecommendedCalories(feet, inches, weight, gender, age);
 
 exports.handler = (event, context) => {
@@ -38,17 +36,6 @@ exports.handler = (event, context) => {
                 )
                 break;
 
-                // case "LaunchRequest":
-                //   // Launch Request
-                //   console.log(`LAUNCH REQUEST`)
-                //   context.succeed(
-                //     generateResponse(
-                //       buildSpeechletResponse("Welcome to an Alexa Skill, this is running on a deployed lambda function", false),
-                //       {}
-                //     )
-                //   )
-                //   break;
-
             case "IntentRequest":
                 // Intent Request
                 console.log(`INTENT REQUEST`)
@@ -64,6 +51,7 @@ exports.handler = (event, context) => {
 
                         numcalories = foodToCalories(foodName);
                         totalCalories = totalCalories + numcalories;
+                        history.push("foodName")
 
                         context.succeed(
                             generateResponse(
@@ -134,6 +122,11 @@ exports.handler = (event, context) => {
 
             case "SessionEndRequest":
                 // Session Ended Request
+                context.succeed(
+                    generateResponse(
+                        buildSpeechletResponse(`Thanks for using Calorie Counter. See you around!`, true), {}
+                    )
+                )
                 console.log('SESSION ENDED REQUEST')
                 break;
 
