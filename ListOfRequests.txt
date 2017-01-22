@@ -24,7 +24,6 @@ AddCalories i ate {consumedFood} today
 AddCalories i had an {consumedFood} today
 AddCalories i had a {consumedFood} today
 AddCalories i had {consumedFood} today
-
 AddCalories i ate {nFoods} {consumedFood}
 AddCalories i had {nFoods} {consumedFood}
 AddCalories i ate {nFoods}  {consumedFood} today
@@ -39,3 +38,13 @@ PersonalInfo set my height as {heightFeet} feet and {heightInches} inches weight
 PersonalInfo set my age as {age} height as {heightFeet} feet and {heightInches} inches weight as {weight} and sex as {gender}
 PersonalInfo set my sex as {gender} height as {heightFeet} feet and {heightInches} inches weight as {weight} and age as {age}
 PersonalInfo what is my suggested calorie count
+
+FoodHistory what have i eaten so far today
+FoodHistory what have i eaten today so far
+FoodHistory what is my history for today
+FoodHistory what have i ate so far
+FoodHistory what have i ate today so far
+FoodHistory what did i eat today
+FoodHistory what did i eat
+FoodHistory what have i ate
+FoodHistory what have i eaten

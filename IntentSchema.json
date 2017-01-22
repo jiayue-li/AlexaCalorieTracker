@@ -4,21 +4,19 @@
         "slots": [{
             "name": "Food",
             "type": "food"
-        },
-                 {
-                   "name": "numFoods",
-                   "type": "AMAZON.NUMBER"
-                 }]
+        }, {
+            "name": "numFoods",
+            "type": "AMAZON.NUMBER"
+        }]
     }, {
         "intent": "AddCalories",
         "slots": [{
             "name": "consumedFood",
             "type": "food"
-        },{
-          "name": "nFoods",
-                   "type": "AMAZON.NUMBER"
-        }
-                 ]
+        }, {
+            "name": "nFoods",
+            "type": "AMAZON.NUMBER"
+        }]
     }, {
         "intent": "PersonalInfo",
         "slots": [{
@@ -37,5 +35,8 @@
             "name": "gender",
             "type": "boolean"
         }]
+    }, {
+        "intent": "FoodHistory",
     }]
+}]
 }
