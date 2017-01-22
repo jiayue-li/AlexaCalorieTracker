@@ -9,10 +9,15 @@ var cList = {
 };
 
 var totalCalories = 0;
-var height = 66; //inches
+
+
+var feet = 0;
+var inches = 66; //inches
 var weight = 180; //pounds
-var gender = true; //female, false for male
+var gender = "true"; //female, false for male
 var age = 20; //years
+
+var suggestedCalories = calculateRecommendedCalories(feet, inches, weight, gender, age);
 
 exports.handler = (event, context) =>
 {
@@ -34,16 +39,16 @@ exports.handler = (event, context) =>
         )
         break;
 
-      case "LaunchRequest":
-        // Launch Request
-        console.log(`LAUNCH REQUEST`)
-        context.succeed(
-          generateResponse(
-            buildSpeechletResponse("Welcome to an Alexa Skill, this is running on a deployed lambda function", false),
-            {}
-          )
-        )
-        break;
+      // case "LaunchRequest":
+      //   // Launch Request
+      //   console.log(`LAUNCH REQUEST`)
+      //   context.succeed(
+      //     generateResponse(
+      //       buildSpeechletResponse("Welcome to an Alexa Skill, this is running on a deployed lambda function", false),
+      //       {}
+      //     )
+      //   )
+      //   break;
 
       case "IntentRequest":
         // Intent Request
@@ -88,6 +93,15 @@ exports.handler = (event, context) =>
 
               break;
 
+          case "PersonalInfo":
+            context.succeed(
+                generateResponse(
+                  buildSpeechletResponse(`You should eat ${suggestedCalories} calories each day. Your calorie count for the day is ${totalCalories}`, false),
+                  {}
+                )
+              )
+            break;
+
           case "GetVideoViewCountSinceDate":
             console.log(event.request.intent.slots.SinceDate.value)
             var endpoint = "" // ENDPOINT GOES HERE
@@ -120,7 +134,24 @@ function foodToCalories(foodName) {
 // function addCalories(calories) {
 //   totalCalories = totalCalories + calories;
 // }
+function poundsToKilos(weight) {
+  return weight*0.453592;
+}
 
+function inchesToCentimeters(feet, inches) {
+  return 2.54*(feet*12+inches);
+}
+
+function calculateRecommendedCalories(feet, inches, weight, gender, age) {
+  if (gender == "true") {
+    suggestedCalories = 10*poundsToKilos(weight) + 6.25*inchesToCentimeters(feet, inches) - 5*age -161
+
+  }
+  else {
+    suggestedCalories = 10*poundsToKilos(weight) + 6.25*inchesToCentimeters(feet, inches) - 5*age + 5
+  }
+  return Math.round(suggestedCalories);
+}
 
 // Helpers
 buildSpeechletResponse = (outputText, shouldEndSession) => {
