@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00D66B61E3532960069F131 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D66B51E3532960069F131 /* AppDelegate.swift */; };
+		A00D66BB1E3532960069F131 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00D66B91E3532960069F131 /* Main.storyboard */; };
+		A00D66BD1E3532960069F131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A00D66BC1E3532960069F131 /* Assets.xcassets */; };
+		A00D66C01E3532960069F131 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00D66BE1E3532960069F131 /* LaunchScreen.storyboard */; };
+		A00D66C81E3542260069F131 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D66C71E3542260069F131 /* PersonalInfoViewController.swift */; };
+		A00D66CA1E3545660069F131 /* DataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D66C91E3545660069F131 /* DataGenerator.swift */; };
+		A00D66CC1E354BE50069F131 /* FoodHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D66CB1E354BE50069F131 /* FoodHistoryViewController.swift */; };
+		A00D66CE1E35537D0069F131 /* RecommendationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00D66CD1E35537D0069F131 /* RecommendationsViewController.swift */; };
+		E04A287CA90A88DAB739F2A1 /* Pods_AlexaCalorieCounter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D585106456833F533A46D4 /* Pods_AlexaCalorieCounter.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		59F1B682B9488167A7F1F282 /* Pods-AlexaCalorieCounter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexaCalorieCounter.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlexaCalorieCounter/Pods-AlexaCalorieCounter.release.xcconfig"; sourceTree = "<group>"; };
+		A00D66B21E3532960069F131 /* AlexaCalorieCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlexaCalorieCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00D66B51E3532960069F131 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A00D66BA1E3532960069F131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A00D66BC1E3532960069F131 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A00D66BF1E3532960069F131 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A00D66C11E3532960069F131 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A00D66C71E3542260069F131 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		A00D66C91E3545660069F131 /* DataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGenerator.swift; sourceTree = "<group>"; };
+		A00D66CB1E354BE50069F131 /* FoodHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodHistoryViewController.swift; sourceTree = "<group>"; };
+		A00D66CD1E35537D0069F131 /* RecommendationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationsViewController.swift; sourceTree = "<group>"; };
+		A6D585106456833F533A46D4 /* Pods_AlexaCalorieCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlexaCalorieCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87F3DEA3C32178AC84F0F3F /* Pods-AlexaCalorieCounter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlexaCalorieCounter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlexaCalorieCounter/Pods-AlexaCalorieCounter.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00D66AF1E3532950069F131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E04A287CA90A88DAB739F2A1 /* Pods_AlexaCalorieCounter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6502FE903EECB049BF5D18DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D87F3DEA3C32178AC84F0F3F /* Pods-AlexaCalorieCounter.debug.xcconfig */,
+				59F1B682B9488167A7F1F282 /* Pods-AlexaCalorieCounter.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		728195FF55599961BE051420 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6D585106456833F533A46D4 /* Pods_AlexaCalorieCounter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A00D66A91E3532950069F131 = {
+			isa = PBXGroup;
+			children = (
+				A00D66B41E3532960069F131 /* AlexaCalorieCounter */,
+				A00D66B31E3532960069F131 /* Products */,
+				6502FE903EECB049BF5D18DC /* Pods */,
+				728195FF55599961BE051420 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A00D66B31E3532960069F131 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00D66B21E3532960069F131 /* AlexaCalorieCounter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00D66B41E3532960069F131 /* AlexaCalorieCounter */ = {
+			isa = PBXGroup;
+			children = (
+				A00D66B51E3532960069F131 /* AppDelegate.swift */,
+				A00D66B91E3532960069F131 /* Main.storyboard */,
+				A00D66BC1E3532960069F131 /* Assets.xcassets */,
+				A00D66BE1E3532960069F131 /* LaunchScreen.storyboard */,
+				A00D66C11E3532960069F131 /* Info.plist */,
+				A00D66C71E3542260069F131 /* PersonalInfoViewController.swift */,
+				A00D66C91E3545660069F131 /* DataGenerator.swift */,
+				A00D66CB1E354BE50069F131 /* FoodHistoryViewController.swift */,
+				A00D66CD1E35537D0069F131 /* RecommendationsViewController.swift */,
+			);
+			path = AlexaCalorieCounter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00D66B11E3532950069F131 /* AlexaCalorieCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00D66C41E3532960069F131 /* Build configuration list for PBXNativeTarget "AlexaCalorieCounter" */;
+			buildPhases = (
+				61428050E937EE2771114367 /* [CP] Check Pods Manifest.lock */,
+				A00D66AE1E3532950069F131 /* Sources */,
+				A00D66AF1E3532950069F131 /* Frameworks */,
+				A00D66B01E3532950069F131 /* Resources */,
+				7C24DE1E4BA4306613E5CD28 /* [CP] Embed Pods Frameworks */,
+				0939999A38D0688CE90D32B2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlexaCalorieCounter;
+			productName = AlexaCalorieCounter;
+			productReference = A00D66B21E3532960069F131 /* AlexaCalorieCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00D66AA1E3532950069F131 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "John Yang";
+				TargetAttributes = {
+					A00D66B11E3532950069F131 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WPPR726NJK;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A00D66AD1E3532950069F131 /* Build configuration list for PBXProject "AlexaCalorieCounter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A00D66A91E3532950069F131;
+			productRefGroup = A00D66B31E3532960069F131 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00D66B11E3532950069F131 /* AlexaCalorieCounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A00D66B01E3532950069F131 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00D66C01E3532960069F131 /* LaunchScreen.storyboard in Resources */,
+				A00D66BD1E3532960069F131 /* Assets.xcassets in Resources */,
+				A00D66BB1E3532960069F131 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0939999A38D0688CE90D32B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlexaCalorieCounter/Pods-AlexaCalorieCounter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61428050E937EE2771114367 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7C24DE1E4BA4306613E5CD28 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlexaCalorieCounter/Pods-AlexaCalorieCounter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00D66AE1E3532950069F131 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00D66CA1E3545660069F131 /* DataGenerator.swift in Sources */,
+				A00D66CE1E35537D0069F131 /* RecommendationsViewController.swift in Sources */,
+				A00D66C81E3542260069F131 /* PersonalInfoViewController.swift in Sources */,
+				A00D66B61E3532960069F131 /* AppDelegate.swift in Sources */,
+				A00D66CC1E354BE50069F131 /* FoodHistoryViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A00D66B91E3532960069F131 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A00D66BA1E3532960069F131 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A00D66BE1E3532960069F131 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A00D66BF1E3532960069F131 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A00D66C21E3532960069F131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00D66C31E3532960069F131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A00D66C51E3532960069F131 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D87F3DEA3C32178AC84F0F3F /* Pods-AlexaCalorieCounter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPPR726NJK;
+				INFOPLIST_FILE = AlexaCalorieCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = johnyang.AlexaCalorieCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A00D66C61E3532960069F131 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59F1B682B9488167A7F1F282 /* Pods-AlexaCalorieCounter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPPR726NJK;
+				INFOPLIST_FILE = AlexaCalorieCounter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = johnyang.AlexaCalorieCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00D66AD1E3532950069F131 /* Build configuration list for PBXProject "AlexaCalorieCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00D66C21E3532960069F131 /* Debug */,
+				A00D66C31E3532960069F131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00D66C41E3532960069F131 /* Build configuration list for PBXNativeTarget "AlexaCalorieCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00D66C51E3532960069F131 /* Debug */,
+				A00D66C61E3532960069F131 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00D66AA1E3532950069F131 /* Project object */;
+}
